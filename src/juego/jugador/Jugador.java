@@ -18,6 +18,7 @@ public class Jugador {
     private final String nombre;
     private int vida;
     private final int ataque;
+    private final int defensa;
     private final Habilidad habilidad;
 
     /**
@@ -26,12 +27,14 @@ public class Jugador {
      * @param nombre    el nombre del jugador
      * @param vida      los puntos de vida iniciales
      * @param ataque    el valor de ataque
+     * @param defensa   el valor de defensa
      * @param habilidad la habilidad especial del jugador
      */
-    Jugador(String nombre, int vida, int ataque, Habilidad habilidad) {
+    Jugador(String nombre, int vida, int ataque, int defensa, Habilidad habilidad) {
         this.nombre = nombre;
         this.vida = vida;
         this.ataque = ataque;
+        this.defensa = defensa;
         this.habilidad = habilidad;
     }
 
@@ -63,6 +66,15 @@ public class Jugador {
     }
 
     /**
+     * Devuelve el valor de defensa del jugador.
+     *
+     * @return el valor de defensa
+     */
+    public int getDefensa() {
+        return defensa;
+    }
+
+    /**
      * Devuelve la habilidad especial del jugador.
      *
      * @return la habilidad del jugador
@@ -72,16 +84,18 @@ public class Jugador {
     }
 
     /**
-     * Aplica daño al jugador. Los puntos de vida nunca bajan de cero.
+     * Aplica daño al jugador. La defensa reduce el daño recibido y los
+     * puntos de vida nunca bajan de cero.
      *
-     * @param cantidadDanio el daño recibido
+     * @param cantidadDanio el daño bruto recibido
      * @throws IllegalArgumentException si la cantidad de daño es negativa
      */
     public void recibirDanio(int cantidadDanio) {
         if (cantidadDanio < 0) {
             throw new IllegalArgumentException("La cantidad de daño no puede ser negativa");
         }
-        this.vida = Math.max(this.vida - cantidadDanio, 0);
+        int danioReal = Math.max(cantidadDanio - defensa, 0);
+        this.vida = Math.max(this.vida - danioReal, 0);
     }
 
     /**
@@ -98,6 +112,7 @@ public class Jugador {
         return "Jugador{nombre='" + nombre + "'"
                 + ", vida=" + vida
                 + ", ataque=" + ataque
+                + ", defensa=" + defensa
                 + ", habilidad=" + habilidad.getNombre() + "}";
     }
 }

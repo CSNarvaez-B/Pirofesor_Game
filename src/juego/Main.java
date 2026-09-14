@@ -90,6 +90,7 @@ public class Main {
             .establecerNombre(nombreDelJugador)
             .establecerVida(100)
             .establecerAtaque(15)
+            .establecerDefensa(10)
             .establecerHabilidad(golpeCertero)
             .construir();
     }

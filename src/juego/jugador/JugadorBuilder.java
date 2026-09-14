@@ -18,6 +18,7 @@ public class JugadorBuilder {
     private String nombre;
     private int vida;
     private int ataque;
+    private int defensa;
     private Habilidad habilidad;
 
     /**
@@ -66,6 +67,22 @@ public class JugadorBuilder {
     }
 
     /**
+     * Establece el valor de defensa del jugador. Si no se llama, la
+     * defensa queda en cero (el jugador no reduce el daño recibido).
+     *
+     * @param defensa el valor de defensa
+     * @return este mismo builder, para encadenar llamadas
+     * @throws IllegalArgumentException si la defensa es negativa
+     */
+    public JugadorBuilder establecerDefensa(int defensa) {
+        if (defensa < 0) {
+            throw new IllegalArgumentException("La defensa del jugador no puede ser negativa");
+        }
+        this.defensa = defensa;
+        return this;
+    }
+
+    /**
      * Establece la habilidad especial del jugador.
      *
      * @param habilidad la habilidad del jugador
@@ -99,6 +116,6 @@ public class JugadorBuilder {
         if (habilidad == null) {
             throw new IllegalStateException("No se puede construir el jugador sin una habilidad");
         }
-        return new Jugador(nombre, vida, ataque, habilidad);
+        return new Jugador(nombre, vida, ataque, defensa, habilidad);
     }
 }
