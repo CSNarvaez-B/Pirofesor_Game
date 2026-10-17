@@ -13,11 +13,6 @@ import juego.util.Dificultad;
  * código dependa de la interfaz y no de esta clase concreta,
  * aunque la forma de obtener la instancia siga siendo estática.</p>
  *
- * <p>Nota: esta implementación no es thread-safe (la inicialización
- * perezosa de {@link #getInstance()} podría crear dos instancias si
- * dos hilos la llaman al mismo tiempo antes de la primera asignación).
- * Para esta aplicación, que es de un solo hilo, no representa un
- * problema real.</p>
  *
  * @author Cristian
  * @version 3.0
