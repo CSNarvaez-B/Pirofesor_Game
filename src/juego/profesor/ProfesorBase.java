@@ -3,17 +3,7 @@ package juego.profesor;
 import juego.util.TipoProfesor;
 
 /**
- * Clase base abstracta que reúne los atributos y el comportamiento común de
- * todos los profesores.
- *
- * <p>Patrón aplicado: Factory Method. Los productos concretos
- * ({@link ProfesorMatematicas}, {@link ProfesorArquitectura} y
- * {@link ProfesorInformatica}) heredan de esta clase y solo aportan sus
- * estadísticas iniciales, evitando repetir los getters, los setters y las
- * validaciones en cada uno.</p>
- *
- * @author Juan
- * @version 1.0
+ * Clase base que contiene los datos y comportamientos comunes de los diferentes profesores del juego, como nombre, vida, ataque, defensa y tipo de profesor.
  */
 public abstract class ProfesorBase implements Profesor {
 

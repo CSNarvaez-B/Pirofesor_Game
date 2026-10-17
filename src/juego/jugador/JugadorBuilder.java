@@ -3,15 +3,7 @@ package juego.jugador;
 import juego.habilidad.Habilidad;
 
 /**
- * Constructor paso a paso de un {@link Jugador}.
- *
- * <p>Patrón aplicado: Builder. Permite armar un jugador indicando sus
- * datos uno por uno, con una llamada encadenada por cada dato
- * ({@code establecerNombre(...).establecerVida(...)...}), y valida cada
- * dato apenas se recibe en vez de esperar hasta el final.</p>
- *
- * @author Juan
- * @version 1.0
+ * Clase encargada de construir un jugador estableciendo progresivamente su nombre, estadísticas y habilidad especial.
  */
 public class JugadorBuilder {
 

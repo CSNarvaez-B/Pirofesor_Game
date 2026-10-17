@@ -3,11 +3,7 @@ package juego.profesor;
 import juego.util.TipoProfesor;
 
 /**
- * Profesor de Informática. Producto concreto del Factory Method con un perfil
- * ofensivo: mucho ataque a costa de menos vida y defensa.
- *
- * @author Juan
- * @version 1.0
+ * Representa al profesor de Informática dentro del juego y define sus estadísticas iniciales de vida, ataque y defensa.
  */
 public class ProfesorInformatica extends ProfesorBase {
 

@@ -15,23 +15,7 @@ import juego.ui.RenderizadorMenu;
 import juego.util.LimpiadorPantalla;
 
 /**
- * Punto de entrada de la aplicación.
- *
- * <p>Aquí se obtiene la única instancia de {@link Configuracion}
- * (Singleton) y se crea el {@link MenuPrincipal} con sus dependencias
- * por defecto. El resto del sistema recibe sus colaboradores por
- * constructor y no sabe (ni le importa) cómo fueron construidos —
- * a esto se le llama "composition root" — con la excepción de
- * Configuracion, que por ser Singleton se obtiene vía
- * {@code getInstance()} en cualquier punto que la necesite.</p>
- *
- * <p>El {@link Scanner} se crea una única vez aquí y se comparte entre
- * {@link MenuPrincipal} y {@link MenuSeleccionProfesor}: crear más de un
- * Scanner sobre {@code System.in} puede perder datos ya almacenados en
- * el buffer interno del primero.</p>
- *
- * @author Cristian, Camilo, Santiago, Juan
- * @version 1.2
+ * Clase principal del juego. Se encarga de iniciar la aplicación y mostrar el menú principal para comenzar la partida.
  */
 public class Main {
 

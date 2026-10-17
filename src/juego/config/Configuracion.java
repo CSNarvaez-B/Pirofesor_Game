@@ -3,19 +3,7 @@ package juego.config;
 import juego.util.Dificultad;
 
 /**
- * Configuración global del juego.
- *
- * <p>Patrón aplicado: Singleton. Garantiza una única instancia
- * accesible desde cualquier parte del código a través de
- * {@link #getInstance()}.</p>
- *
- * <p>Implementa {@link ConfiguracionJuego} para que el resto del
- * código dependa de la interfaz y no de esta clase concreta,
- * aunque la forma de obtener la instancia siga siendo estática.</p>
- *
- *
- * @author Cristian
- * @version 3.0
+ * Clase encargada de almacenar y administrar la configuración general del juego, como la dificultad y el idioma seleccionado.
  */
 public class Configuracion implements ConfiguracionJuego {
 

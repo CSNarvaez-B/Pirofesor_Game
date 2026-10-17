@@ -1,10 +1,7 @@
 package juego.util;
 
 /**
- * Enumeración que representa los niveles de dificultad del juego.
- * 
- * @author Cristian
- * @version 1.0
+ * Representa los diferentes niveles de dificultad disponibles en el juego.
  */
 public enum Dificultad {
     FACIL,

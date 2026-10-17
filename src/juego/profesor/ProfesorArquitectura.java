@@ -3,11 +3,7 @@ package juego.profesor;
 import juego.util.TipoProfesor;
 
 /**
- * Profesor de Arquitectura. Producto concreto del Factory Method con un perfil
- * defensivo: mucha vida y defensa, pero poco ataque.
- *
- * @author Juan
- * @version 1.0
+ * Representa al profesor de Arquitectura dentro del juego y define sus estadísticas iniciales de vida, ataque y defensa.
  */
 public class ProfesorArquitectura extends ProfesorBase {
 

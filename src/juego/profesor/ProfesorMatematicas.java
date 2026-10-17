@@ -3,11 +3,7 @@ package juego.profesor;
 import juego.util.TipoProfesor;
 
 /**
- * Profesor de Matemáticas. Producto concreto del Factory Method con un perfil
- * equilibrado entre vida, ataque y defensa.
- *
- * @author Juan
- * @version 1.0
+ * Representa al profesor de Matemáticas dentro del juego y define sus estadísticas iniciales de vida, ataque y defensa.
  */
 public class ProfesorMatematicas extends ProfesorBase {
 

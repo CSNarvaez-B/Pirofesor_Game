@@ -5,15 +5,7 @@ import java.util.Random;
 import juego.util.TipoProfesor;
 
 /**
- * Fábrica de profesores.
- *
- * <p>Patrón aplicado: Factory Method. Centraliza la creación de los productos
- * concretos ({@link ProfesorMatematicas}, {@link ProfesorArquitectura} y
- * {@link ProfesorInformatica}) para que el resto del juego pida un profesor sin
- * conocer sus clases ni sus constructores.</p>
- *
- * @author Juan
- * @version 1.0
+ * Clase encargada de crear profesores según el tipo solicitado. Permite obtener diferentes clases de profesores desde otras partes del juego.
  */
 public class ProfesorFactory {
 

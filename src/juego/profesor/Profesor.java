@@ -3,14 +3,7 @@ package juego.profesor;
 import juego.util.TipoProfesor;
 
 /**
- * Contrato que define el comportamiento de un profesor dentro del juego.
- *
- * <p>Patrón aplicado: Factory Method. Esta interfaz representa el "producto"
- * que la clase {@link ProfesorFactory} construye. El resto del juego trabaja
- * siempre contra este tipo y nunca contra las clases concretas.</p>
- *
- * @author Juan
- * @version 1.0
+ * Define las operaciones y características que debe tener un profesor dentro del juego, incluyendo sus datos y estadísticas de combate.
  */
 public interface Profesor {
 

@@ -3,15 +3,7 @@ package juego.jugador;
 import juego.habilidad.Habilidad;
 
 /**
- * Jugador que combate contra un profesor.
- *
- * <p>Patrón aplicado: Builder. Esta clase es el "producto" que construye
- * {@link JugadorBuilder}. El constructor no es público a propósito: la
- * única forma de crear un {@link Jugador} desde fuera de este paquete es
- * a través del builder, que ya se encarga de validar los datos.</p>
- *
- * @author Juan
- * @version 1.0
+ * Representa al jugador que participa en los combates del juego. Contiene su nombre, estadísticas de combate y la habilidad especial que puede usar.
  */
 public class Jugador {
 

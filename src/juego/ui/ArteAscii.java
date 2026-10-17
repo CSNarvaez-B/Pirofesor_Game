@@ -1,12 +1,7 @@
 package juego.ui;
 
 /**
- * Contiene las constantes de arte ASCII y textos estáticos usados
- * en la interfaz del menú. Mantener esto separado permite editar
- * la apariencia visual sin tocar la lógica de renderizado.
- *
- * @author Cristian
- * @version 1.0
+ * Contiene los textos y dibujos en ASCII utilizados para mostrar los elementos visuales de los menús del juego.
  */
 public final class ArteAscii {
 

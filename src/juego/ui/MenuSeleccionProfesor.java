@@ -8,15 +8,7 @@ import juego.profesor.ProfesorFactory;
 import juego.util.TipoProfesor;
 
 /**
- * Menú que permite al jugador elegir contra qué profesor combatir.
- *
- * <p>Muestra los tipos de profesor disponibles y, con el que el jugador
- * elija, usa {@link ProfesorFactory} (Factory Method) para construir el
- * oponente. Recibe el {@link Scanner} y la fábrica por constructor, igual
- * que {@link MenuPrincipal}, para poder inyectar dobles de prueba.</p>
- *
- * @author Juan
- * @version 1.0
+ * Representa el menú donde el jugador selecciona el profesor contra el que desea combatir durante la partida.
  */
 public class MenuSeleccionProfesor {
 

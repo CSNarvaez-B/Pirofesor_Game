@@ -1,12 +1,7 @@
 package juego.ui;
  
 /**
- * Responsable exclusivamente de dibujar los elementos visuales del menú
- * (título, opciones, mensajes, despedida). No conoce nada sobre cómo
- * se lee la entrada del usuario ni sobre la limpieza de pantalla.
- *
- * @author Cristian
- * @version 1.0
+ * Clase encargada de mostrar en consola los elementos visuales de los menús del juego, como títulos, opciones y mensajes.
  */
 public class RenderizadorMenu {
  

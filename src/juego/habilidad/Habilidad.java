@@ -1,15 +1,7 @@
 package juego.habilidad;
 
 /**
- * Habilidad especial que un jugador puede usar en combate, además de su
- * ataque normal.
- *
- * <p>Es una clase simple e inmutable pensada para crecer: con el tiempo
- * puede haber muchas habilidades distintas (curación, ataques especiales,
- * defensa, etc.), todas representadas con esta misma forma.</p>
- *
- * @author Juan
- * @version 1.0
+ * Representa una habilidad especial que el jugador puede utilizar durante el combate, indicando su nombre, descripción y daño adicional.
  */
 public class Habilidad {
 

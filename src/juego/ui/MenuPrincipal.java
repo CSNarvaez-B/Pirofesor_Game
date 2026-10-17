@@ -6,19 +6,7 @@ import java.util.Scanner;
 import juego.util.LimpiadorPantalla;
 
 /**
- * Menú principal del juego. Orquesta la limpieza de pantalla y el
- * renderizado (delegados a otras clases) y se encarga de leer y
- * validar la opción elegida por el usuario.
- *
- * <p>Las dependencias ({@link Scanner}, {@link LimpiadorPantalla},
- * {@link RenderizadorMenu}) se reciben por constructor en vez de
- * crearse internamente. Esto invierte la dependencia: MenuPrincipal
- * ya no decide con qué implementación concreta trabaja, y en pruebas
- * unitarias se pueden inyectar dobles de prueba (por ejemplo un
- * Scanner sobre un String, o un LimpiadorPantalla que no haga nada).</p>
- *
- * @author Cristian
- * @version 4.0
+ * Representa el menú principal del juego. Muestra las opciones disponibles y se encarga de leer y validar la opción seleccionada por el usuario.
  */
 public class MenuPrincipal {
 

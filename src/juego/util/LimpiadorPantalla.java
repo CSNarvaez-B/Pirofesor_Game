@@ -1,14 +1,7 @@
 package juego.util;
  
 /**
- * Responsable exclusivamente de limpiar la pantalla de la consola,
- * detectando el sistema operativo. Es una utilidad genérica, sin
- * conocimiento del juego ni de la interfaz de menú, por lo que
- * vive en el paquete util y puede reutilizarse desde cualquier
- * otra pantalla (combate, inventario, etc.).
- *
- * @author Cristian
- * @version 1.0
+ * Clase encargada de limpiar la pantalla de la consola para facilitar la presentación de las diferentes partes del juego.
  */
 public class LimpiadorPantalla {
  

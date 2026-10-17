@@ -4,21 +4,7 @@ import juego.config.Configuracion;
 import juego.util.Dificultad;
 
 /**
- * Pruebas manuales de {@link Configuracion}.
- *
- * <p>Como Configuracion volvió a ser un Singleton, estas pruebas
- * verifican tanto el comportamiento del patrón ({@code getInstance()}
- * siempre devuelve la misma instancia, y el estado persiste entre
- * llamadas) como las validaciones de los setters.</p>
- *
- * <p>Importante: al compartir una única instancia global, el orden
- * de los tests importa. {@link #testValoresPorDefecto()} debe
- * ejecutarse antes de cualquier test que mute la configuración
- * (dificultad o idioma), o dejará de reflejar los valores por
- * defecto reales.</p>
- *
- * @author Cristian
- * @version 3.0
+ * Clase que contiene pruebas para comprobar el funcionamiento de la clase {@link Configuracion} y sus validaciones principales.
  */
 public class ConfiguracionTest {
 
