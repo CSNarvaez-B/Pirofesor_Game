@@ -2,6 +2,8 @@ package juego;
 
 import java.util.Scanner;
 
+import juego.combate.Combatiente;
+import juego.combate.JugadorAdapter;
 import juego.config.Configuracion;
 import juego.config.ConfiguracionJuego;
 import juego.habilidad.Habilidad;
@@ -54,8 +56,13 @@ public class Main {
         Jugador jugador = crearJugador(scanner);
         Profesor profesor = new MenuSeleccionProfesor(scanner, new ProfesorFactory()).seleccionarProfesor();
 
-        menu.mostrarMensaje(jugador.getNombre() + " se prepara para enfrentar a "
-            + profesor.getNombre() + "...");
+        // Adapter: el jugador se adapta a Combatiente para tratarlo igual que al profesor
+        // (Profesor ya es un Combatiente).
+        Combatiente combatienteJugador = new JugadorAdapter(jugador);
+        Combatiente combatienteProfesor = profesor;
+
+        menu.mostrarMensaje(combatienteJugador.getNombre() + " se prepara para enfrentar a "
+            + combatienteProfesor.getNombre() + "...");
 
         // TODO: implementar el combate por turnos entre jugador y profesor
     }
