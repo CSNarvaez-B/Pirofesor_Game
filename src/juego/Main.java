@@ -1,14 +1,8 @@
 package juego;
 
 import java.util.Scanner;
-
 import juego.combate.Combatiente;
-import juego.combate.JugadorAdapter;
-import juego.config.Configuracion;
-import juego.config.ConfiguracionJuego;
-import juego.habilidad.Habilidad;
-import juego.jugador.Jugador;
-import juego.jugador.JugadorBuilder;
+import juego.fachada.JuegoFachada;
 import juego.profesor.Profesor;
 import juego.profesor.ProfesorFactory;
 import juego.ui.MenuPrincipal;
@@ -22,9 +16,7 @@ import juego.util.LimpiadorPantalla;
 public class Main {
 
     public static void main(String[] args) {
-        // Configuracion es un Singleton: getInstance() siempre
-        // devuelve la misma instancia en toda la ejecución.
-        ConfiguracionJuego config = Configuracion.getInstance();
+        JuegoFachada fachada = new JuegoFachada();
 
         Scanner scanner = new Scanner(System.in);
         MenuPrincipal menu = new MenuPrincipal(scanner, new LimpiadorPantalla(), new RenderizadorMenu());
@@ -34,55 +26,28 @@ public class Main {
         switch (opcion) {
             case 1:
                 menu.mostrarMensaje("Iniciando nueva partida en dificultad "
-                    + config.getDificultad() + "...");
-                iniciarPartida(scanner, menu);
+                    + fachada.getDificultad() + "...");
+                iniciarPartida(scanner, menu, fachada);
                 break;
             case 2:
                 menu.mostrarDespedida();
                 break;
             default:
-                // No debería ocurrir: MenuPrincipal ya garantiza el rango
                 break;
         }
 
         menu.cerrar();
     }
 
-    /**
-     * Construye al jugador (Builder) y al profesor elegido (Factory Method)
-     * para arrancar la partida.
-     */
-    private static void iniciarPartida(Scanner scanner, MenuPrincipal menu) {
-        Jugador jugador = crearJugador(scanner);
+    private static void iniciarPartida(Scanner scanner, MenuPrincipal menu, JuegoFachada fachada) {
+        System.out.print("\n  Ingrese el nombre de su jugador: ");
+        Combatiente jugador = fachada.crearJugador(scanner.nextLine());
+
         Profesor profesor = new MenuSeleccionProfesor(scanner, new ProfesorFactory()).seleccionarProfesor();
 
-        // Adapter: el jugador se adapta a Combatiente para tratarlo igual que al profesor
-        // (Profesor ya es un Combatiente).
-        Combatiente combatienteJugador = new JugadorAdapter(jugador);
-        Combatiente combatienteProfesor = profesor;
-
-        menu.mostrarMensaje(combatienteJugador.getNombre() + " se prepara para enfrentar a "
-            + combatienteProfesor.getNombre() + "...");
+        menu.mostrarMensaje(jugador.getNombre() + " se prepara para enfrentar a "
+            + profesor.getNombre() + "...");
 
         // TODO: implementar el combate por turnos entre jugador y profesor
-    }
-
-    private static Jugador crearJugador(Scanner scanner) {
-        System.out.print("\n  Ingrese el nombre de su jugador: ");
-        String nombreDelJugador = scanner.nextLine();
-
-        Habilidad golpeCertero = new Habilidad(
-            "Golpe Certero",
-            "Un golpe adicional que suma daño extra al ataque normal",
-            10
-        );
-
-        return new JugadorBuilder()
-            .establecerNombre(nombreDelJugador)
-            .establecerVida(100)
-            .establecerAtaque(15)
-            .establecerDefensa(10)
-            .establecerHabilidad(golpeCertero)
-            .construir();
     }
 }

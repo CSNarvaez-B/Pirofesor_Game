@@ -6,6 +6,7 @@ import java.util.List;
 import juego.combate.Combatiente;
 import juego.combate.JugadorAdapter;
 import juego.habilidad.Habilidad;
+import juego.habilidad.HabilidadSimple;
 import juego.jugador.Jugador;
 import juego.jugador.JugadorBuilder;
 import juego.profesor.ProfesorFactory;
@@ -42,7 +43,7 @@ public class JugadorAdapterTest {
     }
 
     private static Jugador crearJugador() {
-        Habilidad habilidad = new Habilidad("Golpe Certero", "Suma daño extra al ataque", 10);
+        Habilidad habilidad = new HabilidadSimple("Golpe Certero", "Suma daño extra al ataque", 10);
         return new JugadorBuilder()
             .establecerNombre("Ana")
             .establecerVida(100)
