@@ -1,11 +1,12 @@
 package juego.profesor;
 
+import juego.combate.Combatiente;
 import juego.util.TipoProfesor;
 
 /**
  * Define las operaciones y características que debe tener un profesor dentro del juego, incluyendo sus datos y estadísticas de combate.
  */
-public interface Profesor {
+public interface Profesor extends Combatiente {
 
     /**
      * Devuelve el nombre visible del profesor.
